@@ -20,8 +20,11 @@ module.exports = function(neode)
         }).then(result =>
         {
             logger.info('Successfully created Node in Neo4j');
-            res.send(result);
-            next();
+
+            return result.toJson();
+        }).then(json =>
+        {
+            res.send(json);
         }).catch(error =>
         {
             logger.error(`Error was caught ${error.message}`);
