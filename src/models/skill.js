@@ -7,6 +7,6 @@ module.exports =
         yearsOfExperience: 'integer',
         generalArea      : {
             type   : 'string',
-            indexed: true,
+            index: true,
         },
     };
